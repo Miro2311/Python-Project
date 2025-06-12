@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Prüfungsvorbereitung - Detaillierte Zusammenfassung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2980b9;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin: 30px 0 15px 0;
+            font-size: 1.8em;
+            background: linear-gradient(90deg, #ecf0f1, transparent);
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        h3 {
+            color: #8e44ad;
+            margin: 20px 0 10px 0;
+            font-size: 1.4em;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 5px;
+        }
+
+        h4 {
+            color: #e67e22;
+            margin: 15px 0 8px 0;
+            font-size: 1.2em;
+        }
+
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow-x: auto;
+            border-left: 5px solid #e74c3c;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .python-keyword {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .python-string {
+            color: #2ecc71;
+        }
+
+        .python-comment {
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .python-number {
+            color: #e74c3c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e3f2fd;
+            transition: background 0.3s ease;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #fdcb6e;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #fdcb6e;
+        }
+
+        .success-box {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #fdcb6e;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #fdcb6e;
+        }
+
+        .checkmark {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .crossmark {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+
+        .inline-code {
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        .toc {
+            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .toc li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #fdcb6e;
+        }
+
+        .strategy-section {
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            .code-block {
+                padding: 15px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Python Prüfungsvorbereitung</h1>
+        <p style="text-align: center; font-size: 1.2em; color: #7f8c8d; margin-bottom: 30px;">
+            Detaillierte Zusammenfassung aller prüfungsrelevanten Themen
+        </p>
+
+        <div class="toc">
+            <h3 style="color: white; border: none; margin-bottom: 15px;">📚 Inhaltsverzeichnis</h3>
+            <ul>
+                <li>Code Interpretation und Completion</li>
+                <li>Basic Programming (Variables, Operators, etc.)</li>
+                <li>Conditions und Loops</li>
+                <li>Functions, DRY, KISS</li>
+                <li>Errors und Exceptions</li>
+                <li>Scope of Variables</li>
+                <li>User Input und Print Output</li>
+                <li>Data Structures (Tuples, Lists, Dictionaries)</li>
+                <li>Object Oriented Programming</li>
+                <li>Prüfungsstrategien</li>
+            </ul>
+        </div>
+
+        <section class="section">
+            <h2>1. 🔍 Code Interpretation und Completion</h2>
+            
+            <h3>Grundlagen der Code-Interpretation</h3>
+            <ul>
+                <li><strong>Was passiert:</strong> Du musst Code lesen und das Ergebnis vorhersagen</li>
+                <li><strong>Wichtig:</strong> Schritt-für-Schritt Ausführung im Kopf durchgehen</li>
+                <li><strong>Häufige Fallen:</strong> Variablen-Überschreibung, Scope-Probleme, Datentyp-Konvertierungen</li>
+            </ul>
+
+            <h3>Code Completion Strategien</h3>
+            <ul>
+                <li>Logik des Codes verstehen</li>
+                <li>Erwartetes Ergebnis analysieren</li>
+                <li>Syntaktisch korrekte Ergänzungen finden</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>2. 🔧 Basic Programming - Fundamentale Konzepte</h2>
+            
+            <h3>Variables und Datatypes</h3>
+            
+            <h4>Grundlegende Datentypen:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Typ</th>
+                        <th>Beispiel</th>
+                        <th>Eigenschaften</th>
+                        <th>Mutability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">int</span></td>
+                        <td><span class="inline-code">42</span>, <span class="inline-code">-17</span></td>
+                        <td>Ganze Zahlen, unbegrenzte Größe</td>
+                        <td>Immutable</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">float</span></td>
+                        <td><span class="inline-code">3.14</span>, <span class="inline-code">2.0</span></td>
+                        <td>Fließkommazahlen</td>
+                        <td>Immutable</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">str</span></td>
+                        <td><span class="inline-code">"Hello"</span>, <span class="inline-code">'World'</span></td>
+                        <td>Zeichenketten</td>
+                        <td>Immutable</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">bool</span></td>
+                        <td><span class="inline-code">True</span>, <span class="inline-code">False</span></td>
+                        <td>Wahrheitswerte</td>
+                        <td>Immutable</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">NoneType</span></td>
+                        <td><span class="inline-code">None</span></td>
+                        <td>Repräsentiert "nichts"</td>
+                        <td>Immutable</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Variable Assignment:</h4>
+            <div class="code-block">
+                <pre><span class="python-comment"># Einfache Zuweisung</span>
+x = <span class="python-number">10</span>
+name = <span class="python-string">"Python"</span>
+
+<span class="python-comment"># Multiple Assignment</span>
+a, b, c = <span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>
+x = y = z = <span class="python-number">0</span>
+
+<span class="python-comment"># Typ-Checking</span>
+<span class="python-keyword">type</span>(<span class="python-number">42</span>)        <span class="python-comment"># &lt;class 'int'&gt;</span>
+<span class="python-keyword">isinstance</span>(<span class="python-number">42</span>, <span class="python-keyword">int</span>)  <span class="python-comment"># True</span></pre>
+            </div>
+
+            <h4>Type Conversion (Casting):</h4>
+            <div class="code-block">
+                <pre><span class="python-comment"># String zu Number</span>
+<span class="python-keyword">int</span>(<span class="python-string">"42"</span>)        <span class="python-comment"># 42</span>
+<span class="python-keyword">float</span>(<span class="python-string">"3.14"</span>)    <span class="python-comment"># 3.14</span>
+<span class="python-keyword">int</span>(<span class="python-string">"3.14"</span>)      <span class="python-comment"># ValueError!</span>
+
+<span class="python-comment"># Number zu String</span>
+<span class="python-keyword">str</span>(<span class="python-number">42</span>)          <span class="python-comment"># "42"</span>
+<span class="python-keyword">str</span>(<span class="python-number">3.14</span>)        <span class="python-comment"># "3.14"</span>
+
+<span class="python-comment"># Boolean Conversion</span>
+<span class="python-keyword">bool</span>(<span class="python-number">0</span>)          <span class="python-comment"># False</span>
+<span class="python-keyword">bool</span>(<span class="python-number">1</span>)          <span class="python-comment"># True</span>
+<span class="python-keyword">bool</span>(<span class="python-string">""</span>)         <span class="python-comment"># False</span>
+<span class="python-keyword">bool</span>(<span class="python-string">"text"</span>)     <span class="python-comment"># True</span></pre>
+            </div>
+
+            <h4>Truthy und Falsy Values:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Falsy Values</th>
+                        <th>Truthy Values</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">False</span>, <span class="inline-code">0</span>, <span class="inline-code">0.0</span></td>
+                        <td>Alles andere</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">""</span>, <span class="inline-code">[]</span>, <span class="inline-code">{}</span>, <span class="inline-code">()</span></td>
+                        <td><span class="inline-code">True</span>, <span class="inline-code">1</span>, <span class="inline-code">"text"</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">None</span></td>
+                        <td><span class="inline-code">[1]</span>, <span class="inline-code">{"a": 1}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>String Methods (Wichtige)</h3>
+            <div class="code-block">
+                <pre>text = <span class="python-string">"Hello World"</span>
+
+<span class="python-comment"># Case Methods</span>
+text.upper()         <span class="python-comment"># "HELLO WORLD"</span>
+text.lower()         <span class="python-comment"># "hello world"</span> 
+text.title()         <span class="python-comment"># "Hello World"</span>
+text.capitalize()    <span class="python-comment"># "Hello world"</span>
+
+<span class="python-comment"># Check Methods</span>
+text.startswith(<span class="python-string">"H"</span>) <span class="python-comment"># True</span>
+text.endswith(<span class="python-string">"d"</span>)   <span class="python-comment"># True</span>
+text.isdigit()       <span class="python-comment"># False</span>
+text.isalpha()       <span class="python-comment"># False (wegen Leerzeichen)</span>
+
+<span class="python-comment"># Manipulation</span>
+text.replace(<span class="python-string">"o"</span>, <span class="python-string">"0"</span>)  <span class="python-comment"># "Hell0 W0rld"</span>
+text.strip()            <span class="python-comment"># Entfernt Whitespace</span>
+text.split(<span class="python-string">" "</span>)         <span class="python-comment"># ["Hello", "World"]</span>
+<span class="python-string">"-"</span>.join([<span class="python-string">"a"</span>, <span class="python-string">"b"</span>])    <span class="python-comment"># "a-b"</span></pre>
+            </div>
+
+            <h3>Mathematical Operators</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Bedeutung</th>
+                        <th>Beispiel</th>
+                        <th>Ergebnis</th>
+                        <th>Typ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">+</span></td>
+                        <td>Addition</td>
+                        <td><span class="inline-code">5 + 3</span></td>
+                        <td><span class="inline-code">8</span></td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">-</span></td>
+                        <td>Subtraktion</td>
+                        <td><span class="inline-code">5 - 3</span></td>
+                        <td><span class="inline-code">2</span></td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">*</span></td>
+                        <td>Multiplikation</td>
+                        <td><span class="inline-code">5 * 3</span></td>
+                        <td><span class="inline-code">15</span></td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">/</span></td>
+                        <td>Division (Float)</td>
+                        <td><span class="inline-code">5 / 2</span></td>
+                        <td><span class="inline-code">2.5</span></td>
+                        <td>float</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">//</span></td>
+                        <td>Integer Division</td>
+                        <td><span class="inline-code">5 // 2</span></td>
+                        <td><span class="inline-code">2</span></td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">%</span></td>
+                        <td>Modulo</td>
+                        <td><span class="inline-code">5 % 2</span></td>
+                        <td><span class="inline-code">1</span></td>
+                        <td>int</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">**</span></td>
+                        <td>Potenz</td>
+                        <td><span class="inline-code">2 ** 3</span></td>
+                        <td><span class="inline-code">8</span></td>
+                        <td>int</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h4>⚠️ Operator Precedence (Wichtig für Prüfung!):</h4>
+                <ol>
+                    <li><span class="inline-code">()</span> - Klammern</li>
+                    <li><span class="inline-code">**</span> - Potenz (rechts-assoziativ!)</li>
+                    <li><span class="inline-code">*</span>, <span class="inline-code">/</span>, <span class="inline-code">//</span>, <span class="inline-code">%</span> - Multiplikation/Division (links-assoziativ)</li>
+                    <li><span class="inline-code">+</span>, <span class="inline-code">-</span> - Addition/Subtraktion (links-assoziativ)</li>
+                </ol>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-comment"># Beispiel für Precedence:</span>
+<span class="python-number">2</span> + <span class="python-number">3</span> * <span class="python-number">4</span>        <span class="python-comment"># 14 (nicht 20!)</span>
+<span class="python-number">2</span> ** <span class="python-number">3</span> ** <span class="python-number">2</span>      <span class="python-comment"># 512 (nicht 64!)</span>  
+(<span class="python-number">2</span> + <span class="python-number">3</span>) * <span class="python-number">4</span>      <span class="python-comment"># 20</span></pre>
+            </div>
+
+            <h3>Logical Operators</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Bedeutung</th>
+                        <th>Beispiel</th>
+                        <th>Wann True?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">and</span></td>
+                        <td>UND</td>
+                        <td><span class="inline-code">True and False</span></td>
+                        <td>Beide True</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">or</span></td>
+                        <td>ODER</td>
+                        <td><span class="inline-code">True or False</span></td>
+                        <td>Mindestens einer True</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">not</span></td>
+                        <td>NICHT</td>
+                        <td><span class="inline-code">not True</span></td>
+                        <td>Operand ist False</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h4>🔄 Short-Circuit Evaluation:</h4>
+                <ul>
+                    <li><span class="inline-code">and</span>: Stoppt bei erstem <span class="inline-code">False</span></li>
+                    <li><span class="inline-code">or</span>: Stoppt bei erstem <span class="inline-code">True</span></li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-comment"># Short-Circuit Beispiele</span>
+<span class="python-keyword">False</span> <span class="python-keyword">and</span> <span class="python-keyword">print</span>(<span class="python-string">"Wird nicht ausgeführt"</span>)  <span class="python-comment"># print wird nicht aufgerufen</span>
+<span class="python-keyword">True</span> <span class="python-keyword">or</span> <span class="python-keyword">print</span>(<span class="python-string">"Wird nicht ausgeführt"</span>)    <span class="python-comment"># print wird nicht aufgerufen</span></pre>
+            </div>
+
+            <h3>Comparison Operators</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Bedeutung</th>
+                        <th>Beispiel</th>
+                        <th>Chaining möglich?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">==</span></td>
+                        <td>Gleich</td>
+                        <td><span class="inline-code">5 == 5</span> → <span class="inline-code">True</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">!=</span></td>
+                        <td>Ungleich</td>
+                        <td><span class="inline-code">5 != 3</span> → <span class="inline-code">True</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">&lt;</span></td>
+                        <td>Kleiner</td>
+                        <td><span class="inline-code">3 &lt; 5</span> → <span class="inline-code">True</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">&lt;=</span></td>
+                        <td>Kleiner gleich</td>
+                        <td><span class="inline-code">5 &lt;= 5</span> → <span class="inline-code">True</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">&gt;</span></td>
+                        <td>Größer</td>
+                        <td><span class="inline-code">5 &gt; 3</span> → <span class="inline-code">True</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">&gt;=</span></td>
+                        <td>Größer gleich</td>
+                        <td><span class="inline-code">5 &gt;= 5</span> → <span class="inline-code">True</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><span class="python-comment"># Comparison Chaining:</span>
+<span class="python-number">1</span> &lt; <span class="python-number">2</span> &lt; <span class="python-number">3</span>        <span class="python-comment"># True (equivalent: 1 &lt; 2 and 2 &lt; 3)</span>
+<span class="python-number">1</span> &lt; <span class="python-number">3</span> &lt; <span class="python-number">2</span>        <span class="python-comment"># False</span></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>3. 🔄 Conditions und Loops</h2>
+            
+            <h3>If-Statements</h3>
+            <div class="code-block">
+                <pre><span class="python-comment"># Grundstruktur</span>
+<span class="python-keyword">if</span> condition:
+    <span class="python-comment"># Code</span>
+<span class="python-keyword">elif</span> another_condition:
+    <span class="python-comment"># Code</span>
+<span class="python-keyword">else</span>:
+    <span class="python-comment"># Code</span>
+
+<span class="python-comment"># Ternary Operator (Conditional Expression)</span>
+result = value_if_true <span class="python-keyword">if</span> condition <span class="python-keyword">else</span> value_if_false
+
+<span class="python-comment"># Beispiele</span>
+age = <span class="python-number">20</span>
+status = <span class="python-string">"adult"</span> <span class="python-keyword">if</span> age >= <span class="python-number">18</span> <span class="python-keyword">else</span> <span class="python-string">"minor"</span></pre>
+            </div>
+
+            <h3>Loops</h3>
+            
+            <h4>For-Loops:</h4>
+            <div class="code-block">
+                <pre><span class="python-comment"># Über Sequenz iterieren</span>
+<span class="python-keyword">for</span> item <span class="python-keyword">in</span> [<span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>]:
+    <span class="python-keyword">print</span>(item)
+
+<span class="python-comment"># Mit range() - WICHTIG für Prüfung!</span>
+<span class="python-keyword">for</span> i <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">5</span>):        <span class="python-comment"># 0, 1, 2, 3, 4</span>
+    <span class="python-keyword">print</span>(i)
+
+<span class="python-keyword">for</span> i <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">1</span>, <span class="python-number">6</span>):     <span class="python-comment"># 1, 2, 3, 4, 5 (Ende exklusiv!)</span>
+    <span class="python-keyword">print</span>(i)
+
+<span class="python-keyword">for</span> i <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">0</span>, <span class="python-number">10</span>, <span class="python-number">2</span>): <span class="python-comment"># 0, 2, 4, 6, 8 (Schritt 2)</span>
+    <span class="python-keyword">print</span>(i)
+
+<span class="python-keyword">for</span> i <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">10</span>, <span class="python-number">0</span>, <span class="python-number">-1</span>): <span class="python-comment"># 10, 9, 8, ..., 1 (rückwärts)</span>
+    <span class="python-keyword">print</span>(i)
+
+<span class="python-comment"># Über String iterieren</span>
+<span class="python-keyword">for</span> char <span class="python-keyword">in</span> <span class="python-string">"Hello"</span>:
+    <span class="python-keyword">print</span>(char)  <span class="python-comment"># H, e, l, l, o</span>
+
+<span class="python-comment"># Mit enumerate() - Index und Wert</span>
+<span class="python-keyword">for</span> index, value <span class="python-keyword">in</span> <span class="python-keyword">enumerate</span>([<span class="python-string">"a"</span>, <span class="python-string">"b"</span>, <span class="python-string">"c"</span>]):
+    <span class="python-keyword">print</span>(<span class="python-string">f"</span><span class="python-string">{index}: {value}"</span>)  <span class="python-comment"># 0: a, 1: b, 2: c</span></pre>
+            </div>
+
+            <h4>While-Loops:</h4>
+            <div class="code-block">
+                <pre>count = <span class="python-number">0</span>
+<span class="python-keyword">while</span> count &lt; <span class="python-number">5</span>:
+    <span class="python-keyword">print</span>(count)
+    count += <span class="python-number">1</span>  <span class="python-comment"># Wichtig: Zähler erhöhen!</span>
+
+<span class="python-comment"># Infinite Loop (vermeiden!)</span>
+<span class="python-comment"># while True:</span>
+<span class="python-comment">#     print("Forever")</span></pre>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🔧 Loop Control:</h4>
+                <ul>
+                    <li><span class="inline-code">break</span>: Verlässt die Schleife komplett</li>
+                    <li><span class="inline-code">continue</span>: Springt zur nächsten Iteration</li>
+                    <li><span class="inline-code">else</span>: Wird ausgeführt, wenn Loop normal beendet wird (nicht mit break)</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">for</span> i <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">10</span>):
+    <span class="python-keyword">if</span> i == <span class="python-number">3</span>:
+        <span class="python-keyword">continue</span>  <span class="python-comment"># Überspringt 3</span>
+    <span class="python-keyword">if</span> i == <span class="python-number">7</span>:
+        <span class="python-keyword">break</span>     <span class="python-comment"># Stoppt bei 7</span>
+    <span class="python-keyword">print</span>(i)      <span class="python-comment"># Ausgabe: 0, 1, 2, 4, 5, 6</span>
+<span class="python-keyword">else</span>:
+    <span class="python-keyword">print</span>(<span class="python-string">"Loop completed"</span>)  <span class="python-comment"># Wird NICHT ausgeführt (break!)</span></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>4. 🔧 Functions, DRY, KISS</h2>
+            
+            <h3>Function Definition und Constructor-Konzept</h3>
+            <div class="code-block">
+                <pre><span class="python-keyword">def</span> function_name(parameter1, parameter2=default_value):
+    <span class="python-string">"""Docstring - beschreibt die Funktion"""</span>
+    <span class="python-comment"># Function body</span>
+    <span class="python-keyword">return</span> result
+
+<span class="python-comment"># Beispiel</span>
+<span class="python-keyword">def</span> greet(name, greeting=<span class="python-string">"Hello"</span>):
+    <span class="python-string">"""Grüßt eine Person mit optional angepasstem Gruß"""</span>
+    <span class="python-keyword">return</span> <span class="python-string">f"</span><span class="python-string">{greeting}, {name}!"</span>
+
+<span class="python-comment"># Function Call</span>
+message = greet(<span class="python-string">"Alice"</span>)          <span class="python-comment"># "Hello, Alice!"</span>
+message = greet(<span class="python-string">"Bob"</span>, <span class="python-string">"Hi"</span>)      <span class="python-comment"># "Hi, Bob!"</span></pre>
+            </div>
+
+            <h3>Parameter Types</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Typ</th>
+                        <th>Beispiel</th>
+                        <th>Beschreibung</th>
+                        <th>Reihenfolge</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Positional</td>
+                        <td><span class="inline-code">func(a, b)</span></td>
+                        <td>Reihenfolge wichtig</td>
+                        <td>1.</td>
+                    </tr>
+                    <tr>
+                        <td>Default</td>
+                        <td><span class="inline-code">func(a, b=5)</span></td>
+                        <td>Fallback-Wert</td>
+                        <td>2.</td>
+                    </tr>
+                    <tr>
+                        <td>*args</td>
+                        <td><span class="inline-code">func(*args)</span></td>
+                        <td>Variable Anzahl pos. Parameter</td>
+                        <td>3.</td>
+                    </tr>
+                    <tr>
+                        <td>**kwargs</td>
+                        <td><span class="inline-code">func(**kwargs)</span></td>
+                        <td>Variable Anzahl Keyword Parameter</td>
+                        <td>4.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">def</span> complex_function(a, b=<span class="python-number">2</span>, *args, **kwargs):
+    <span class="python-keyword">print</span>(<span class="python-string">f"a: </span><span class="python-string">{a}"</span>)
+    <span class="python-keyword">print</span>(<span class="python-string">f"b: </span><span class="python-string">{b}"</span>)
+    <span class="python-keyword">print</span>(<span class="python-string">f"args: </span><span class="python-string">{args}"</span>)
+    <span class="python-keyword">print</span>(<span class="python-string">f"kwargs: </span><span class="python-string">{kwargs}"</span>)
+
+complex_function(<span class="python-number">1</span>, <span class="python-number">3</span>, <span class="python-number">4</span>, <span class="python-number">5</span>, name=<span class="python-string">"Alice"</span>, age=<span class="python-number">25</span>)
+<span class="python-comment"># a: 1</span>
+<span class="python-comment"># b: 3</span>  
+<span class="python-comment"># args: (4, 5)</span>
+<span class="python-comment"># kwargs: {'name': 'Alice', 'age': 25}</span></pre>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Return vs Print</h4>
+                <div class="code-block">
+                    <pre><span class="python-keyword">def</span> print_sum(a, b):
+    <span class="python-keyword">print</span>(a + b)     <span class="python-comment"># Gibt nichts zurück (None)</span>
+
+<span class="python-keyword">def</span> return_sum(a, b):
+    <span class="python-keyword">return</span> a + b     <span class="python-comment"># Gibt Wert zurück</span>
+
+<span class="python-comment"># Unterschied:</span>
+print_sum(<span class="python-number">2</span>, <span class="python-number">3</span>)      <span class="python-comment"># Zeigt: 5, aber result = None</span>
+result = return_sum(<span class="python-number">2</span>, <span class="python-number">3</span>)  <span class="python-comment"># result = 5</span></pre>
+                </div>
+            </div>
+
+            <h3>DRY (Don't Repeat Yourself)</h3>
+            <ul>
+                <li>Code nicht duplizieren</li>
+                <li>Wiederverwendbare Funktionen schreiben</li>
+                <li>Magic Numbers vermeiden (Konstanten verwenden)</li>
+            </ul>
+
+            <h3>KISS (Keep It Simple, Stupid)</h3>
+            <ul>
+                <li>Einfache, verständliche Lösungen bevorzugen</li>
+                <li>Komplexe Verschachtelungen vermeiden</li>
+                <li>Klare Variablennamen verwenden</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>5. ⚠️ Errors und Exceptions</h2>
+            
+            <h3>Common Error Types</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Error Type</th>
+                        <th>Ursache</th>
+                        <th>Beispiel</th>
+                        <th>Wann auftritt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">SyntaxError</span></td>
+                        <td>Falsche Syntax</td>
+                        <td><span class="inline-code">if x = 5:</span></td>
+                        <td>Beim Parsen</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">NameError</span></td>
+                        <td>Unbekannte Variable</td>
+                        <td><span class="inline-code">print(undefined_var)</span></td>
+                        <td>Zur Laufzeit</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">TypeError</span></td>
+                        <td>Falscher Datentyp</td>
+                        <td><span class="inline-code">"5" + 5</span></td>
+                        <td>Zur Laufzeit</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">ValueError</span></td>
+                        <td>Falscher Wert</td>
+                        <td><span class="inline-code">int("abc")</span></td>
+                        <td>Zur Laufzeit</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">IndexError</span></td>
+                        <td>Index außerhalb Bereich</td>
+                        <td><span class="inline-code">list[10]</span> bei 3 Elementen</td>
+                        <td>Zur Laufzeit</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">KeyError</span></td>
+                        <td>Schlüssel existiert nicht</td>
+                        <td><span class="inline-code">dict["nonexistent"]</span></td>
+                        <td>Zur Laufzeit</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">ZeroDivisionError</span></td>
+                        <td>Division durch Null</td>
+                        <td><span class="inline-code">5 / 0</span></td>
+                        <td>Zur Laufzeit</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Exception Handling</h3>
+            <div class="code-block">
+                <pre><span class="python-keyword">try</span>:
+    <span class="python-comment"># Risikoreicher Code</span>
+    result = <span class="python-number">10</span> / x
+<span class="python-keyword">except</span> ZeroDivisionError:
+    <span class="python-comment"># Spezifische Exception</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Division durch Null!"</span>)
+<span class="python-keyword">except</span> (ValueError, TypeError):
+    <span class="python-comment"># Multiple Exceptions</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Wert- oder Typfehler!"</span>)
+<span class="python-keyword">except</span> Exception <span class="python-keyword">as</span> e:
+    <span class="python-comment"># Alle anderen Exceptions</span>
+    <span class="python-keyword">print</span>(<span class="python-string">f"Unerwarteter Fehler: </span><span class="python-string">{e}"</span>)
+<span class="python-keyword">else</span>:
+    <span class="python-comment"># Wird ausgeführt wenn kein Error</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Alles ok!"</span>)
+<span class="python-keyword">finally</span>:
+    <span class="python-comment"># Wird immer ausgeführt</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Cleanup"</span>)</pre>
+            </div>
+
+            <div class="info-box">
+                <h4>🎯 Wichtige Exception-Reihenfolge:</h4>
+                <ul>
+                    <li>Spezifische Exceptions zuerst</li>
+                    <li>Allgemeine Exceptions später</li>
+                    <li><span class="inline-code">Exception</span> als letztes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>6. 🔍 Scope of Variables</h2>
+            
+            <div class="highlight-box">
+                <h3>🎯 LEGB Rule (Sehr wichtig für Prüfung!)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Scope</th>
+                            <th>Beschreibung</th>
+                            <th>Beispiel</th>
+                            <th>Priorität</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>L</strong>ocal</td>
+                            <td>Innerhalb Funktion</td>
+                            <td>Funktionsparameter, lokale Variablen</td>
+                            <td>1 (höchste)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E</strong>nclosing</td>
+                            <td>Äußere Funktion</td>
+                            <td>Nested Functions</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G</strong>lobal</td>
+                            <td>Modul-Ebene</td>
+                            <td>Variablen außerhalb aller Funktionen</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B</strong>uilt-in</td>
+                            <td>Python Built-ins</td>
+                            <td><span class="inline-code">print</span>, <span class="inline-code">len</span>, <span class="inline-code">int</span></td>
+                            <td>4 (niedrigste)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="code-block">
+                <pre>x = <span class="python-string">"global"</span>           <span class="python-comment"># Global Scope</span>
+
+<span class="python-keyword">def</span> outer():
+    x = <span class="python-string">"enclosing"</span>    <span class="python-comment"># Enclosing Scope</span>
+    
+    <span class="python-keyword">def</span> inner():
+        x = <span class="python-string">"local"</span>    <span class="python-comment"># Local Scope</span>
+        <span class="python-keyword">print</span>(x)       <span class="python-comment"># "local" (Local hat Priorität)</span>
+    
+    inner()
+    <span class="python-keyword">print</span>(x)           <span class="python-comment"># "enclosing" (Enclosing in outer())</span>
+
+outer()
+<span class="python-keyword">print</span>(x)               <span class="python-comment"># "global" (Global außerhalb)</span></pre>
+            </div>
+
+            <h3>Global und Nonlocal Keywords</h3>
+            <div class="code-block">
+                <pre>x = <span class="python-number">10</span>  <span class="python-comment"># Global</span>
+
+<span class="python-keyword">def</span> modify_global():
+    <span class="python-keyword">global</span> x
+    x = <span class="python-number">20</span>  <span class="python-comment"># Ändert globale Variable</span>
+
+<span class="python-keyword">def</span> outer():
+    x = <span class="python-number">30</span>
+    
+    <span class="python-keyword">def</span> inner():
+        <span class="python-keyword">nonlocal</span> x
+        x = <span class="python-number">40</span>  <span class="python-comment"># Ändert Variable in outer()</span>
+    
+    inner()
+    <span class="python-keyword">return</span> x  <span class="python-comment"># Gibt 40 zurück</span>
+
+<span class="python-keyword">print</span>(x)               <span class="python-comment"># 10</span>
+modify_global()
+<span class="python-keyword">print</span>(x)               <span class="python-comment"># 20</span>
+<span class="python-keyword">print</span>(outer())         <span class="python-comment"># 40</span>
+<span class="python-keyword">print</span>(x)               <span class="python-comment"># 20 (unchanged)</span></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>7. 📥📤 User Input und Print Output</h2>
+            
+            <h3>Input Function</h3>
+            <div class="code-block">
+                <pre><span class="python-comment"># Grundlegendes Input (immer String!)</span>
+name = <span class="python-keyword">input</span>(<span class="python-string">"Dein Name: "</span>)
+
+<span class="python-comment"># Type Conversion</span>
+age = <span class="python-keyword">int</span>(<span class="python-keyword">input</span>(<span class="python-string">"Dein Alter: "</span>))
+height = <span class="python-keyword">float</span>(<span class="python-keyword">input</span>(<span class="python-string">"Deine Größe: "</span>))
+
+<span class="python-comment"># Input Validation</span>
+<span class="python-keyword">while</span> <span class="python-keyword">True</span>:
+    <span class="python-keyword">try</span>:
+        number = <span class="python-keyword">int</span>(<span class="python-keyword">input</span>(<span class="python-string">"Zahl eingeben: "</span>))
+        <span class="python-keyword">break</span>
+    <span class="python-keyword">except</span> ValueError:
+        <span class="python-keyword">print</span>(<span class="python-string">"Bitte gültige Zahl eingeben!"</span>)</pre>
+            </div>
+
+            <h3>Print Function</h3>
+            <div class="code-block">
+                <pre><span class="python-comment"># Grundlegendes Print</span>
+<span class="python-keyword">print</span>(<span class="python-string">"Hello World"</span>)
+<span class="python-keyword">print</span>(<span class="python-string">"Zahl:"</span>, <span class="python-number">42</span>)
+
+<span class="python-comment"># Separator und End</span>
+<span class="python-keyword">print</span>(<span class="python-string">"A"</span>, <span class="python-string">"B"</span>, <span class="python-string">"C"</span>, sep=<span class="python-string">"-"</span>)     <span class="python-comment"># A-B-C</span>
+<span class="python-keyword">print</span>(<span class="python-string">"A"</span>, <span class="python-string">"B"</span>, <span class="python-string">"C"</span>, sep=<span class="python-string">""</span>)      <span class="python-comment"># ABC</span>
+<span class="python-keyword">print</span>(<span class="python-string">"Erste Zeile"</span>, end=<span class="python-string">" "</span>)
+<span class="python-keyword">print</span>(<span class="python-string">"Fortsetzung"</span>)              <span class="python-comment"># Erste Zeile Fortsetzung</span>
+
+<span class="python-comment"># String Formatting (Wichtig!)</span>
+name = <span class="python-string">"Alice"</span>
+age = <span class="python-number">25</span>
+
+<span class="python-comment"># f-strings (Modern, bevorzugt)</span>
+<span class="python-keyword">print</span>(<span class="python-string">f"Name: </span><span class="python-string">{name}, Alter: {age}"</span>)
+<span class="python-keyword">print</span>(<span class="python-string">f"Quadrat von </span><span class="python-string">{age}: {age**2}"</span>)
+<span class="python-keyword">print</span>(<span class="python-string">f"Formatiert: </span><span class="python-string">{age:02d}"</span>)   <span class="python-comment"># 25 mit führender Null wenn nötig</span>
+
+<span class="python-comment"># .format() Method</span>
+<span class="python-keyword">print</span>(<span class="python-string">"Name: {}, Alter: {}"</span>.format(name, age))
+<span class="python-keyword">print</span>(<span class="python-string">"Name: {n}, Alter: {a}"</span>.format(n=name, a=age))
+
+<span class="python-comment"># % Formatting (Alt, aber muss man kennen)</span>
+<span class="python-keyword">print</span>(<span class="python-string">"Name: %s, Alter: %d"</span> % (name, age))</pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>8. 📊 Data Structures - Tuples, Lists, Dictionaries</h2>
+            
+            <h3>Tuples (Unveränderlich)</h3>
+            
+            <div class="info-box">
+                <h4>✨ Eigenschaften:</h4>
+                <ul>
+                    <li>Geordnet</li>
+                    <li>Unveränderlich (immutable)</li>
+                    <li>Erlaubt Duplikate</li>
+                    <li>Indexierbar</li>
+                    <li>Hashable (kann als Dictionary Key verwendet werden)</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-comment"># Erstellung</span>
+empty_tuple = ()
+single_tuple = (<span class="python-number">42</span>,)  <span class="python-comment"># Komma wichtig!</span>
+coords = (<span class="python-number">10</span>, <span class="python-number">20</span>)
+mixed = (<span class="python-number">1</span>, <span class="python-string">"hello"</span>, <span class="python-number">3.14</span>)
+
+<span class="python-comment"># Zugriff</span>
+first = coords[<span class="python-number">0</span>]     <span class="python-comment"># 10</span>
+last = coords[<span class="python-number">-1</span>]     <span class="python-comment"># 20 (negatives Indexing)</span>
+
+<span class="python-comment"># Slicing (wie bei Strings)</span>
+numbers = (<span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>, <span class="python-number">4</span>, <span class="python-number">5</span>)
+sub = numbers[<span class="python-number">1</span>:<span class="python-number">4</span>]    <span class="python-comment"># (2, 3, 4)</span>
+every_second = numbers[::<span class="python-number">2</span>]  <span class="python-comment"># (1, 3, 5)</span>
+
+<span class="python-comment"># Unpacking</span>
+x, y = coords
+a, b, c = mixed
+
+<span class="python-comment"># Tuple Methods (nur 2!)</span>
+numbers = (<span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">2</span>, <span class="python-number">3</span>, <span class="python-number">2</span>)
+<span class="python-keyword">print</span>(numbers.count(<span class="python-number">2</span>))  <span class="python-comment"># 3</span>
+<span class="python-keyword">print</span>(numbers.index(<span class="python-number">3</span>))  <span class="python-comment"># 3</span></pre>
+            </div>
+
+            <h3>Lists (Veränderlich)</h3>
+            
+            <div class="success-box">
+                <h4>✨ Eigenschaften:</h4>
+                <ul>
+                    <li>Geordnet</li>
+                    <li>Veränderlich (mutable)</li>
+                    <li>Erlaubt Duplikate</li>
+                    <li>Indexierbar</li>
+                    <li>Nicht hashable</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-comment"># Erstellung</span>
+empty_list = []
+numbers = [<span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>, <span class="python-number">4</span>, <span class="python-number">5</span>]
+mixed = [<span class="python-number">1</span>, <span class="python-string">"hello"</span>, <span class="python-number">3.14</span>, <span class="python-keyword">True</span>]
+
+<span class="python-comment"># Zugriff und Modifikation</span>
+first = numbers[<span class="python-number">0</span>]    <span class="python-comment"># 1</span>
+numbers[<span class="python-number">0</span>] = <span class="python-number">10</span>       <span class="python-comment"># Liste wird zu [10, 2, 3, 4, 5]</span>
+
+<span class="python-comment"># Slicing (erstellt neue Liste)</span>
+sub = numbers[<span class="python-number">1</span>:<span class="python-number">4</span>]    <span class="python-comment"># [2, 3, 4]</span>
+numbers[<span class="python-number">1</span>:<span class="python-number">3</span>] = [<span class="python-number">20</span>, <span class="python-number">30</span>]  <span class="python-comment"># Liste wird zu [10, 20, 30, 4, 5]</span></pre>
+            </div>
+
+            <h4>Wichtige List Methods:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Beispiel</th>
+                        <th>Beschreibung</th>
+                        <th>Rückgabe</th>
+                        <th>Ändert Liste?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">append()</span></td>
+                        <td><span class="inline-code">list.append(item)</span></td>
+                        <td>Fügt Element am Ende hinzu</td>
+                        <td><span class="inline-code">None</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">insert()</span></td>
+                        <td><span class="inline-code">list.insert(index, item)</span></td>
+                        <td>Fügt an Position ein</td>
+                        <td><span class="inline-code">None</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">remove()</span></td>
+                        <td><span class="inline-code">list.remove(item)</span></td>
+                        <td>Entfernt erstes Vorkommen</td>
+                        <td><span class="inline-code">None</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">pop()</span></td>
+                        <td><span class="inline-code">list.pop(index)</span></td>
+                        <td>Entfernt und gibt zurück</td>
+                        <td>Element</td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">index()</span></td>
+                        <td><span class="inline-code">list.index(item)</span></td>
+                        <td>Findet Index von Element</td>
+                        <td>Index</td>
+                        <td><span class="crossmark">❌</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">count()</span></td>
+                        <td><span class="inline-code">list.count(item)</span></td>
+                        <td>Zählt Vorkommen</td>
+                        <td>Anzahl</td>
+                        <td><span class="crossmark">❌</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">sort()</span></td>
+                        <td><span class="inline-code">list.sort()</span></td>
+                        <td>Sortiert in-place</td>
+                        <td><span class="inline-code">None</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">reverse()</span></td>
+                        <td><span class="inline-code">list.reverse()</span></td>
+                        <td>Kehrt Reihenfolge um</td>
+                        <td><span class="inline-code">None</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">extend()</span></td>
+                        <td><span class="inline-code">list.extend(other)</span></td>
+                        <td>Fügt alle Elemente hinzu</td>
+                        <td><span class="inline-code">None</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><span class="python-comment"># Beispiele</span>
+numbers = [<span class="python-number">3</span>, <span class="python-number">1</span>, <span class="python-number">4</span>, <span class="python-number">1</span>, <span class="python-number">5</span>]
+
+numbers.append(<span class="python-number">6</span>)        <span class="python-comment"># [3, 1, 4, 1, 5, 6]</span>
+numbers.insert(<span class="python-number">0</span>, <span class="python-number">0</span>)     <span class="python-comment"># [0, 3, 1, 4, 1, 5, 6]</span>
+numbers.remove(<span class="python-number">1</span>)        <span class="python-comment"># [0, 3, 4, 1, 5, 6] (entfernt erstes 1)</span>
+last = numbers.pop()     <span class="python-comment"># last = 6, numbers = [0, 3, 4, 1, 5]</span>
+numbers.sort()           <span class="python-comment"># [0, 1, 3, 4, 5]</span>
+numbers.reverse()        <span class="python-comment"># [5, 4, 3, 1, 0]</span>
+
+<span class="python-comment"># List vs Tuple Creation</span>
+list_from_tuple = <span class="python-keyword">list</span>((<span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>))    <span class="python-comment"># [1, 2, 3]</span>
+tuple_from_list = <span class="python-keyword">tuple</span>([<span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>])   <span class="python-comment"># (1, 2, 3)</span></pre>
+            </div>
+
+            <h3>Dictionaries (Key-Value Paare)</h3>
+            
+            <div class="highlight-box">
+                <h4>✨ Eigenschaften:</h4>
+                <ul>
+                    <li>Geordnet (Python 3.7+: Einfügungsreihenfolge)</li>
+                    <li>Veränderlich</li>
+                    <li>Keys müssen unique und hashable sein</li>
+                    <li>Sehr schneller Zugriff O(1)</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-comment"># Erstellung</span>
+empty_dict = {}
+person = {<span class="python-string">"name"</span>: <span class="python-string">"Alice"</span>, <span class="python-string">"age"</span>: <span class="python-number">30</span>, <span class="python-string">"city"</span>: <span class="python-string">"Berlin"</span>}
+mixed_keys = {<span class="python-number">1</span>: <span class="python-string">"one"</span>, <span class="python-string">"two"</span>: <span class="python-number">2</span>, (<span class="python-number">3</span>, <span class="python-number">4</span>): <span class="python-string">"tuple"</span>}
+
+<span class="python-comment"># Zugriff</span>
+name = person[<span class="python-string">"name"</span>]           <span class="python-comment"># "Alice" - KeyError wenn nicht vorhanden</span>
+age = person.get(<span class="python-string">"age"</span>, <span class="python-number">0</span>)      <span class="python-comment"># 30 - Default value wenn nicht vorhanden</span>
+salary = person.get(<span class="python-string">"salary"</span>)   <span class="python-comment"># None (Standard default)</span>
+
+<span class="python-comment"># Modifikation</span>
+person[<span class="python-string">"age"</span>] = <span class="python-number">31</span>              <span class="python-comment"># Update existing</span>
+person[<span class="python-string">"job"</span>] = <span class="python-string">"Developer"</span>     <span class="python-comment"># Add new</span>
+<span class="python-keyword">del</span> person[<span class="python-string">"city"</span>]              <span class="python-comment"># Delete</span></pre>
+            </div>
+
+            <h4>Wichtige Dictionary Methods:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Beispiel</th>
+                        <th>Beschreibung</th>
+                        <th>Rückgabe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">keys()</span></td>
+                        <td><span class="inline-code">dict.keys()</span></td>
+                        <td>Alle Schlüssel</td>
+                        <td>dict_keys object</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">values()</span></td>
+                        <td><span class="inline-code">dict.values()</span></td>
+                        <td>Alle Werte</td>
+                        <td>dict_values object</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">items()</span></td>
+                        <td><span class="inline-code">dict.items()</span></td>
+                        <td>Key-Value Paare</td>
+                        <td>dict_items object</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">get()</span></td>
+                        <td><span class="inline-code">dict.get(key, default)</span></td>
+                        <td>Sicherer Zugriff</td>
+                        <td>Value oder default</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">pop()</span></td>
+                        <td><span class="inline-code">dict.pop(key, default)</span></td>
+                        <td>Entfernt und gibt zurück</td>
+                        <td>Value</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">update()</span></td>
+                        <td><span class="inline-code">dict.update(other)</span></td>
+                        <td>Fügt Dictionary hinzu</td>
+                        <td><span class="inline-code">None</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">clear()</span></td>
+                        <td><span class="inline-code">dict.clear()</span></td>
+                        <td>Leert Dictionary</td>
+                        <td><span class="inline-code">None</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre>person = {<span class="python-string">"name"</span>: <span class="python-string">"Alice"</span>, <span class="python-string">"age"</span>: <span class="python-number">30</span>}
+
+<span class="python-comment"># Iteration über Dictionary</span>
+<span class="python-keyword">for</span> key <span class="python-keyword">in</span> person.keys():
+    <span class="python-keyword">print</span>(key)                    <span class="python-comment"># name, age</span>
+
+<span class="python-keyword">for</span> value <span class="python-keyword">in</span> person.values():
+    <span class="python-keyword">print</span>(value)                  <span class="python-comment"># Alice, 30</span>
+
+<span class="python-keyword">for</span> key, value <span class="python-keyword">in</span> person.items():
+    <span class="python-keyword">print</span>(<span class="python-string">f"</span><span class="python-string">{key}: {value}"</span>)      <span class="python-comment"># name: Alice, age: 30</span>
+
+<span class="python-comment"># Dictionary Comprehension</span>
+squares = {x: x**<span class="python-number">2</span> <span class="python-keyword">for</span> x <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">5</span>)}  <span class="python-comment"># {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}</span></pre>
+            </div>
+
+            <h4>Vergleich der Datenstrukturen</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Eigenschaft</th>
+                        <th>Tuple</th>
+                        <th>List</th>
+                        <th>Dictionary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Veränderlich</td>
+                        <td><span class="crossmark">❌</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                    </tr>
+                    <tr>
+                        <td>Geordnet</td>
+                        <td><span class="checkmark">✅</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                        <td><span class="checkmark">✅</span> (Python 3.7+)</td>
+                    </tr>
+                    <tr>
+                        <td>Indexierbar</td>
+                        <td><span class="checkmark">✅</span> (<span class="inline-code">obj[0]</span>)</td>
+                        <td><span class="checkmark">✅</span> (<span class="inline-code">obj[0]</span>)</td>
+                        <td><span class="crossmark">❌</span></td>
+                    </tr>
+                    <tr>
+                        <td>Key-Zugriff</td>
+                        <td><span class="crossmark">❌</span></td>
+                        <td><span class="crossmark">❌</span></td>
+                        <td><span class="checkmark">✅</span> (<span class="inline-code">obj[key]</span>)</td>
+                    </tr>
+                    <tr>
+                        <td>Duplikate</td>
+                        <td><span class="checkmark">✅</span></td>
+                        <td><span class="checkmark">✅</span></td>
+                        <td><span class="crossmark">❌</span> (Keys)</td>
+                    </tr>
+                    <tr>
+                        <td>Hashable</td>
+                        <td><span class="checkmark">✅</span></td>
+                        <td><span class="crossmark">❌</span></td>
+                        <td><span class="crossmark">❌</span></td>
+                    </tr>
+                    <tr>
+                        <td>Performance</td>
+                        <td>Schnell</td>
+                        <td>Mittel</td>
+                        <td>Sehr schnell (O(1))</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>9. 🏗️ Object Oriented Programming</h2>
+            
+            <h3>Classes und Objects</h3>
+            
+            <div class="info-box">
+                <h4>🎯 Was ist eine Klasse?</h4>
+                <p>Eine Klasse ist ein Bauplan für Objekte. Sie definiert, welche Attribute (Daten) und Methoden (Funktionen) Objekte dieser Klasse haben werden. Eine Klasse ist wie eine Vorlage oder ein Template.</p>
+                
+                <h4>🎯 Was ist ein Objekt?</h4>
+                <p>Ein Objekt ist eine konkrete Instanz einer Klasse. Wenn die Klasse der Bauplan ist, dann ist das Objekt das tatsächlich gebaute Haus nach diesem Bauplan.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Person:
+    <span class="python-string">"""Eine einfache Person-Klasse"""</span>
+    
+    <span class="python-comment"># Class Variable (geteilt von allen Instanzen)</span>
+    species = <span class="python-string">"Homo sapiens"</span>
+    
+    <span class="python-keyword">def</span> __init__(self, name, age):
+        <span class="python-string">"""Constructor - wird automatisch bei Objekterstellung aufgerufen"""</span>
+        self.name = name        <span class="python-comment"># Instance Variable</span>
+        self.age = age          <span class="python-comment"># Instance Variable</span>
+    
+    <span class="python-keyword">def</span> greet(self):
+        <span class="python-string">"""Instance Method"""</span>
+        <span class="python-keyword">return</span> <span class="python-string">f"Hallo, ich bin </span><span class="python-string">{self.name}"</span>
+    
+    <span class="python-keyword">def</span> have_birthday(self):
+        <span class="python-string">"""Verändert Objektzustand"""</span>
+        self.age += <span class="python-number">1</span>
+    
+    <span class="python-keyword">@classmethod</span>
+    <span class="python-keyword">def</span> from_string(cls, person_str):
+        <span class="python-string">"""Class Method - alternative Constructor"""</span>
+        name, age = person_str.split(<span class="python-string">'-'</span>)
+        <span class="python-keyword">return</span> cls(name, <span class="python-keyword">int</span>(age))
+    
+    <span class="python-keyword">@staticmethod</span>
+    <span class="python-keyword">def</span> is_adult(age):
+        <span class="python-string">"""Static Method - gehört zur Klasse, braucht keine Instanz"""</span>
+        <span class="python-keyword">return</span> age >= <span class="python-number">18</span>
+
+<span class="python-comment"># Verwendung</span>
+person1 = Person(<span class="python-string">"Alice"</span>, <span class="python-number">25</span>)       <span class="python-comment"># __init__ wird automatisch aufgerufen</span>
+person2 = Person.from_string(<span class="python-string">"Bob-30"</span>)
+
+<span class="python-keyword">print</span>(person1.greet())              <span class="python-comment"># "Hallo, ich bin Alice"</span>
+<span class="python-keyword">print</span>(Person.is_adult(<span class="python-number">17</span>))          <span class="python-comment"># False</span></pre>
+            </div>
+
+            <h3>Constructor (__init__) Details</h3>
+            
+            <div class="highlight-box">
+                <h4>🔧 Was ist ein Constructor?</h4>
+                <p>Der Constructor (<span class="inline-code">__init__</span>) ist eine spezielle Methode, die automatisch aufgerufen wird, wenn ein neues Objekt erstellt wird. Er initialisiert das Objekt mit Startwerten.</p>
+                
+                <h4>📋 Wichtige Punkte:</h4>
+                <ul>
+                    <li>Wird AUTOMATISCH bei <span class="inline-code">obj = ClassName()</span> aufgerufen</li>
+                    <li>Erstes Argument ist immer <span class="inline-code">self</span></li>
+                    <li>Kann Parameter haben für Initialisierung</li>
+                    <li>Gibt nichts zurück (implizit <span class="inline-code">None</span>)</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Car:
+    <span class="python-keyword">def</span> __init__(self, brand, model, year=<span class="python-number">2023</span>):
+        <span class="python-string">"""Constructor mit Default-Parameter"""</span>
+        <span class="python-keyword">print</span>(<span class="python-string">"Neues Auto wird erstellt..."</span>)
+        self.brand = brand
+        self.model = model  
+        self.year = year
+        self.odometer = <span class="python-number">0</span>    <span class="python-comment"># Immer auf 0 initialisiert</span>
+
+<span class="python-comment"># Bei dieser Zeile wird __init__ automatisch aufgerufen:</span>
+my_car = Car(<span class="python-string">"BMW"</span>, <span class="python-string">"X3"</span>)  <span class="python-comment"># Prints: "Neues Auto wird erstellt..."</span></pre>
+            </div>
+
+            <h3>Attributes und Methods</h3>
+            
+            <h4>Attribute Types:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Typ</th>
+                        <th>Wo definiert</th>
+                        <th>Geteilt?</th>
+                        <th>Beispiel</th>
+                        <th>Zugriff</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instance Attribute</td>
+                        <td><span class="inline-code">__init__</span> oder Methoden</td>
+                        <td><span class="crossmark">❌</span></td>
+                        <td><span class="inline-code">self.name</span></td>
+                        <td><span class="inline-code">obj.name</span></td>
+                    </tr>
+                    <tr>
+                        <td>Class Attribute</td>
+                        <td>Direkt in Klasse</td>
+                        <td><span class="checkmark">✅</span></td>
+                        <td><span class="inline-code">species = "Human"</span></td>
+                        <td><span class="inline-code">Class.species</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Method Types:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Typ</th>
+                        <th>Erster Parameter</th>
+                        <th>Decorator</th>
+                        <th>Aufruf</th>
+                        <th>Zugriff auf</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instance Method</td>
+                        <td><span class="inline-code">self</span></td>
+                        <td>-</td>
+                        <td><span class="inline-code">obj.method()</span></td>
+                        <td>Instance + Class</td>
+                    </tr>
+                    <tr>
+                        <td>Class Method</td>
+                        <td><span class="inline-code">cls</span></td>
+                        <td><span class="inline-code">@classmethod</span></td>
+                        <td><span class="inline-code">Class.method()</span></td>
+                        <td>Nur Class</td>
+                    </tr>
+                    <tr>
+                        <td>Static Method</td>
+                        <td>-</td>
+                        <td><span class="inline-code">@staticmethod</span></td>
+                        <td><span class="inline-code">Class.method()</span></td>
+                        <td>Nichts automatisch</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Example:
+    class_var = <span class="python-string">"Shared"</span>
+    
+    <span class="python-keyword">def</span> __init__(self, value):
+        self.instance_var = value
+    
+    <span class="python-keyword">def</span> instance_method(self):
+        <span class="python-keyword">return</span> <span class="python-string">f"Instance: </span><span class="python-string">{self.instance_var}, Class: {self.class_var}"</span>
+    
+    <span class="python-keyword">@classmethod</span>  
+    <span class="python-keyword">def</span> class_method(cls):
+        <span class="python-keyword">return</span> <span class="python-string">f"Class variable: </span><span class="python-string">{cls.class_var}"</span>
+    
+    <span class="python-keyword">@staticmethod</span>
+    <span class="python-keyword">def</span> static_method(x, y):
+        <span class="python-keyword">return</span> x + y
+
+<span class="python-comment"># Verwendung</span>
+obj = Example(<span class="python-string">"test"</span>)
+<span class="python-keyword">print</span>(obj.instance_method())        <span class="python-comment"># Instance: test, Class: Shared</span>
+<span class="python-keyword">print</span>(Example.class_method())       <span class="python-comment"># Class variable: Shared</span>  
+<span class="python-keyword">print</span>(Example.static_method(<span class="python-number">1</span>, <span class="python-number">2</span>))  <span class="python-comment"># 3</span></pre>
+            </div>
+
+            <h3>Properties (Getter/Setter)</h3>
+            
+            <div class="info-box">
+                <h4>🎯 Was sind Properties?</h4>
+                <p>Properties sind eine elegante Art, den Zugriff auf Attribute zu kontrollieren. Sie lassen normale Methodenaufrufe wie Attributzugriffe aussehen. Ein <strong>Getter</strong> wird beim Lesen eines Attributs aufgerufen, ein <strong>Setter</strong> beim Schreiben.</p>
+                
+                <h4>🤔 Warum Properties verwenden?</h4>
+                <ul>
+                    <li>Datenvalidierung beim Setzen</li>
+                    <li>Berechnete Werte (read-only)</li>
+                    <li>Logging/Debugging</li>
+                    <li>Backwards compatibility</li>
+                </ul>
+                
+                <h4>⚖️ Unterschied Attribut vs Property:</h4>
+                <ul>
+                    <li><strong>Attribut:</strong> Direkter Zugriff auf gespeicherten Wert</li>
+                    <li><strong>Property:</strong> Methodenaufruf, der wie Attributzugriff aussieht</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Circle:
+    <span class="python-keyword">def</span> __init__(self, radius):
+        self._radius = radius  <span class="python-comment"># "Private" Attribut (Konvention mit _)</span>
+    
+    <span class="python-keyword">@property</span>
+    <span class="python-keyword">def</span> radius(self):
+        <span class="python-string">"""Getter - wird bei obj.radius aufgerufen"""</span>
+        <span class="python-keyword">print</span>(<span class="python-string">"Radius wird gelesen"</span>)
+        <span class="python-keyword">return</span> self._radius
+    
+    <span class="python-keyword">@radius.setter</span>
+    <span class="python-keyword">def</span> radius(self, value):
+        <span class="python-string">"""Setter - wird bei obj.radius = value aufgerufen"""</span>
+        <span class="python-keyword">print</span>(<span class="python-string">f"Radius wird gesetzt auf </span><span class="python-string">{value}"</span>)
+        <span class="python-keyword">if</span> value &lt; <span class="python-number">0</span>:
+            <span class="python-keyword">raise</span> ValueError(<span class="python-string">"Radius muss positiv sein"</span>)
+        self._radius = value
+    
+    <span class="python-keyword">@property</span>
+    <span class="python-keyword">def</span> area(self):
+        <span class="python-string">"""Read-only Property - kein Setter definiert"""</span>
+        <span class="python-keyword">return</span> <span class="python-number">3.14159</span> * self._radius ** <span class="python-number">2</span>
+    
+    <span class="python-keyword">@property</span>
+    <span class="python-keyword">def</span> diameter(self):
+        <span class="python-string">"""Berechnet aus radius"""</span>
+        <span class="python-keyword">return</span> <span class="python-number">2</span> * self._radius
+
+<span class="python-comment"># Verwendung</span>
+circle = Circle(<span class="python-number">5</span>)
+<span class="python-keyword">print</span>(circle.radius)    <span class="python-comment"># Getter aufgerufen: "Radius wird gelesen" -> 5</span>
+circle.radius = <span class="python-number">10</span>      <span class="python-comment"># Setter aufgerufen: "Radius wird gesetzt auf 10"</span>
+<span class="python-keyword">print</span>(circle.area)      <span class="python-comment"># 314.159 (automatisch berechnet)</span>
+<span class="python-keyword">print</span>(circle.diameter)  <span class="python-comment"># 20 (automatisch berechnet)</span>
+
+<span class="python-comment"># circle.area = 100     # AttributeError! (Kein Setter definiert)</span></pre>
+            </div>
+
+            <h3>Relationships zwischen Klassen</h3>
+            
+            <h4>Aggregation (Has-A Relationship - schwache Verbindung):</h4>
+            <div class="info-box">
+                <p>Bei Aggregation "hat" ein Objekt andere Objekte, aber sie können auch unabhängig voneinander existieren. Wenn das "Besitzer"-Objekt zerstört wird, können die "Teile" weiterhin existieren. Die Beziehung ist schwächer und temporär.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Engine:
+    <span class="python-keyword">def</span> __init__(self, power):
+        self.power = power
+    
+    <span class="python-keyword">def</span> start(self):
+        <span class="python-keyword">return</span> <span class="python-string">"Engine started"</span>
+
+<span class="python-keyword">class</span> Car:
+    <span class="python-keyword">def</span> __init__(self, engine):
+        self.engine = engine  <span class="python-comment"># Car HAS an Engine (Aggregation)</span>
+    
+    <span class="python-keyword">def</span> drive(self):
+        <span class="python-keyword">return</span> self.engine.start() + <span class="python-string">" - Car is driving"</span>
+
+<span class="python-comment"># Engine kann unabhängig existieren</span>
+engine = Engine(<span class="python-number">200</span>)
+car = Car(engine)
+<span class="python-comment"># Wenn car gelöscht wird, existiert engine weiterhin</span></pre>
+            </div>
+
+            <h4>Composition (Part-Of Relationship - starke Verbindung):</h4>
+            <div class="success-box">
+                <p>Bei Composition sind die Teile fest mit dem Ganzen verbunden und können nicht unabhängig existieren. Wenn das "Besitzer"-Objekt zerstört wird, werden auch alle "Teile" zerstört. Die Teile haben keinen Sinn außerhalb des Ganzen.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Room:
+    <span class="python-keyword">def</span> __init__(self, name, size):
+        self.name = name
+        self.size = size
+
+<span class="python-keyword">class</span> House:
+    <span class="python-keyword">def</span> __init__(self, address):
+        self.address = address
+        <span class="python-comment"># Rooms werden INNERHALB des House erstellt (Composition)</span>
+        self.rooms = [
+            Room(<span class="python-string">"Kitchen"</span>, <span class="python-number">20</span>),
+            Room(<span class="python-string">"Bedroom"</span>, <span class="python-number">25</span>),
+            Room(<span class="python-string">"Bathroom"</span>, <span class="python-number">10</span>)
+        ]
+    
+    <span class="python-keyword">def</span> get_total_size(self):
+        <span class="python-keyword">return</span> <span class="python-keyword">sum</span>(room.size <span class="python-keyword">for</span> room <span class="python-keyword">in</span> self.rooms)
+
+<span class="python-comment"># Rooms können nur als Teil des House existieren</span>
+house = House(<span class="python-string">"Main Street 123"</span>)
+<span class="python-comment"># Wenn house gelöscht wird, werden auch alle rooms gelöscht</span></pre>
+            </div>
+
+            <h4>Association (Uses-A Relationship):</h4>
+            <div class="warning-box">
+                <p>Bei Association kennen sich Objekte und arbeiten zusammen, sind aber völlig unabhängig voneinander. Beide können ohne den anderen existieren. Die Beziehung ist meist bidirektional.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Student:
+    <span class="python-keyword">def</span> __init__(self, name):
+        self.name = name
+        self.courses = []  <span class="python-comment"># Liste der Kurse</span>
+    
+    <span class="python-keyword">def</span> enroll(self, course):
+        self.courses.append(course)
+        course.add_student(self)
+
+<span class="python-keyword">class</span> Course:
+    <span class="python-keyword">def</span> __init__(self, name):
+        self.name = name
+        self.students = []  <span class="python-comment"># Liste der Studenten</span>
+    
+    <span class="python-keyword">def</span> add_student(self, student):
+        <span class="python-keyword">if</span> student <span class="python-keyword">not</span> <span class="python-keyword">in</span> self.students:
+            self.students.append(student)
+
+<span class="python-comment"># Beide können unabhängig existieren</span>
+alice = Student(<span class="python-string">"Alice"</span>)
+python_course = Course(<span class="python-string">"Python Programming"</span>)
+alice.enroll(python_course)  <span class="python-comment"># Bidirektionale Verknüpfung</span></pre>
+            </div>
+
+            <h4>Inheritance (Is-A Relationship):</h4>
+            <div class="highlight-box">
+                <p>Bei Vererbung "ist" ein Objekt eine spezielle Version eines anderen. Die Kindklasse erbt alle Eigenschaften der Elternklasse und kann sie erweitern oder überschreiben.</p>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-keyword">class</span> Animal:  <span class="python-comment"># Superclass/Parent class</span>
+    <span class="python-keyword">def</span> __init__(self, name, species):
+        self.name = name
+        self.species = species
+    
+    <span class="python-keyword">def</span> speak(self):
+        <span class="python-keyword">return</span> <span class="python-string">"Some generic animal sound"</span>
+    
+    <span class="python-keyword">def</span> info(self):
+        <span class="python-keyword">return</span> <span class="python-string">f"</span><span class="python-string">{self.name} is a {self.species}"</span>
+
+<span class="python-keyword">class</span> Dog(Animal):  <span class="python-comment"># Subclass/Child class - Dog IS an Animal</span>
+    <span class="python-keyword">def</span> __init__(self, name, breed):
+        <span class="python-keyword">super</span>().__init__(name, <span class="python-string">"Canis lupus"</span>)  <span class="python-comment"># Ruft Parent __init__ auf</span>
+        self.breed = breed
+    
+    <span class="python-keyword">def</span> speak(self):  <span class="python-comment"># Override parent method</span>
+        <span class="python-keyword">return</span> <span class="python-string">f"</span><span class="python-string">{self.name} sagt Wuff!"</span>
+    
+    <span class="python-keyword">def</span> fetch(self):  <span class="python-comment"># Neue Methode nur in Dog</span>
+        <span class="python-keyword">return</span> <span class="python-string">f"</span><span class="python-string">{self.name} brings the ball back"</span>
+
+<span class="python-keyword">class</span> Cat(Animal):  <span class="python-comment"># Cat IS an Animal</span>
+    <span class="python-keyword">def</span> speak(self):  <span class="python-comment"># Override parent method</span>
+        <span class="python-keyword">return</span> <span class="python-string">f"</span><span class="python-string">{self.name} sagt Miau!"</span>
+    
+    <span class="python-keyword">def</span> climb(self):  <span class="python-comment"># Neue Methode nur in Cat</span>
+        <span class="python-keyword">return</span> <span class="python-string">f"</span><span class="python-string">{self.name} climbs the tree"</span>
+
+<span class="python-comment"># Verwendung</span>
+dog = Dog(<span class="python-string">"Buddy"</span>, <span class="python-string">"Golden Retriever"</span>)
+cat = Cat(<span class="python-string">"Whiskers"</span>, <span class="python-string">"Persian"</span>)
+
+<span class="python-keyword">print</span>(dog.speak())    <span class="python-comment"># "Buddy sagt Wuff!" (überschrieben)</span>
+<span class="python-keyword">print</span>(dog.info())     <span class="python-comment"># "Buddy is a Canis lupus" (geerbt)</span>
+<span class="python-keyword">print</span>(dog.fetch())    <span class="python-comment"># "Buddy brings the ball back" (neu)</span>
+
+<span class="python-keyword">print</span>(cat.speak())    <span class="python-comment"># "Whiskers sagt Miau!" (überschrieben)</span>
+<span class="python-keyword">print</span>(cat.climb())    <span class="python-comment"># "Whiskers climbs the tree" (neu)</span></pre>
+            </div>
+
+            <h4>Relationship-Übersicht</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Relationship</th>
+                        <th>Symbol</th>
+                        <th>Stärke</th>
+                        <th>Lebensdauer</th>
+                        <th>Beispiel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Inheritance</strong></td>
+                        <td>IS-A</td>
+                        <td>Sehr stark</td>
+                        <td>Permanent</td>
+                        <td>Dog IS an Animal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Composition</strong></td>
+                        <td>PART-OF</td>
+                        <td>Stark</td>
+                        <td>Abhängig</td>
+                        <td>Room PART-OF House</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aggregation</strong></td>
+                        <td>HAS-A</td>
+                        <td>Mittel</td>
+                        <td>Unabhängig</td>
+                        <td>Car HAS Engine</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Association</strong></td>
+                        <td>USES-A</td>
+                        <td>Schwach</td>
+                        <td>Flexibel</td>
+                        <td>Student USES Course</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>UML Class Diagram Notation</h3>
+            
+            <div class="code-block">
+                <pre><span class="python-comment">Klassenbox:</span>
++-------------------+
+| ClassName         |
++-------------------+
+| - private_attr    |
+| + public_attr     |
+| # protected_attr  |
++-------------------+
+| + public_method() |
+| - private_method()|
+| # protected_meth()|
++-------------------+</pre>
+            </div>
+
+            <div class="info-box">
+                <h4>👁️ Visibility (Sichtbarkeit):</h4>
+                <ul>
+                    <li><span class="inline-code">+</span> Public (öffentlich zugänglich)</li>
+                    <li><span class="inline-code">-</span> Private (nur innerhalb der Klasse)</li>
+                    <li><span class="inline-code">#</span> Protected (nur in Klasse und Subklassen)</li>
+                </ul>
+                
+                <h4>🔗 Relationship-Pfeile:</h4>
+                <ul>
+                    <li><strong>Inheritance:</strong> <span class="inline-code">───▷</span> (leerer Pfeil zeigt zur Superklasse)</li>
+                    <li><strong>Composition:</strong> <span class="inline-code">───♦</span> (gefüllter schwarzer Diamant)</li>
+                    <li><strong>Aggregation:</strong> <span class="inline-code">───◇</span> (leerer weißer Diamant)</li>
+                    <li><strong>Association:</strong> <span class="inline-code">───</span> (einfache Linie)</li>
+                </ul>
+            </div>
+
+            <div class="code-block">
+                <pre><span class="python-comment">UML Beispiel:</span>
+     Animal
+    +-------+
+    | +name |
+    +-------+
+    | +speak() |
+    +-------+
+        ▲
+        |  (Inheritance)
+    +-------+
+    |  Dog  |
+    +-------+
+    | +breed|
+    +-------+
+    | +bark()|
+    +-------+</pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>10. 📚 Zusätzliche wichtige Konzepte aus UE1/UE2/UE3</h2>
+            
+            <h3>List Comprehensions (Wahrscheinlich in Übungen)</h3>
+            <div class="code-block">
+                <pre><span class="python-comment"># Grundform: [expression for item in iterable if condition]</span>
+squares = [x**<span class="python-number">2</span> <span class="python-keyword">for</span> x <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">10</span>)]           <span class="python-comment"># [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+evens = [x <span class="python-keyword">for</span> x <span class="python-keyword">in</span> <span class="python-keyword">range</span>(<span class="python-number">20</span>) <span class="python-keyword">if</span> x % <span class="python-number">2</span> == <span class="python-number">0</span>]  <span class="python-comment"># [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
+words = [<span class="python-string">"hello"</span>, <span class="python-string">"world"</span>, <span class="python-string">"python"</span>]
+lengths = [<span class="python-keyword">len</span>(word) <span class="python-keyword">for</span> word <span class="python-keyword">in</span> words]       <span class="python-comment"># [5, 5, 6]</span></pre>
+            </div>
+
+            <h3>Boolean Context (Truthy/Falsy)</h3>
+            <div class="code-block">
+                <pre><span class="python-comment"># Falsy values in if statements</span>
+<span class="python-keyword">if</span> <span class="python-keyword">not</span> []:          <span class="python-comment"># Empty list is falsy</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Empty"</span>)
+
+<span class="python-keyword">if</span> <span class="python-keyword">not</span> <span class="python-string">""</span>:          <span class="python-comment"># Empty string is falsy</span>  
+    <span class="python-keyword">print</span>(<span class="python-string">"Empty"</span>)
+
+<span class="python-keyword">if</span> <span class="python-keyword">not</span> <span class="python-number">0</span>:           <span class="python-comment"># Zero is falsy</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Zero"</span>)
+
+<span class="python-comment"># Truthy values</span>
+<span class="python-keyword">if</span> [<span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>]:       <span class="python-comment"># Non-empty list is truthy</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Has items"</span>)
+
+<span class="python-keyword">if</span> <span class="python-string">"text"</span>:          <span class="python-comment"># Non-empty string is truthy</span>
+    <span class="python-keyword">print</span>(<span class="python-string">"Has text"</span>)</pre>
+            </div>
+
+            <h3>Multiple Assignment und Swapping</h3>
+            <div class="code-block">
+                <pre><span class="python-comment"># Multiple assignment</span>
+a, b, c = <span class="python-number">1</span>, <span class="python-number">2</span>, <span class="python-number">3</span>
+
+<span class="python-comment"># Swapping (sehr elegant in Python)</span>
+a, b = b, a
+
+<span class="python-comment"># Mit mehr Variablen</span>
+x, y, z = z, x, y</pre>
+            </div>
+
+            <h3>String Indexing und Slicing</h3>
+            <div class="code-block">
+                <pre>text = <span class="python-string">"Python"</span>
+<span class="python-comment"># Indexing</span>
+<span class="python-keyword">print</span>(text[<span class="python-number">0</span>])      <span class="python-comment"># 'P'</span>
+<span class="python-keyword">print</span>(text[<span class="python-number">-1</span>])     <span class="python-comment"># 'n' (letztes Zeichen)</span>
+
+<span class="python-comment"># Slicing [start:end:step]</span>
+<span class="python-keyword">print</span>(text[<span class="python-number">1</span>:<span class="python-number">4</span>])    <span class="python-comment"># 'yth' (Index 1 bis 3)</span>
+<span class="python-keyword">print</span>(text[:<span class="python-number">3</span>])     <span class="python-comment"># 'Pyt' (Anfang bis Index 2)</span>
+<span class="python-keyword">print</span>(text[<span class="python-number">2</span>:])     <span class="python-comment"># 'thon' (Index 2 bis Ende)</span>
+<span class="python-keyword">print</span>(text[::<span class="python-number">-1</span>])   <span class="python-comment"># 'nohtyP' (umgekehrt)</span></pre>
+            </div>
+        </section>
+
+        <section class="strategy-section">
+            <h2>🎯 Prüfungsstrategien basierend auf Fragetypen</h2>
+            
+            <h3>Single Choice</h3>
+            <ul>
+                <li>Wenn unsicher: Raten erlaubt (keine Minuspunkte)</li>
+                <li>Offensichtlich falsche Antworten zuerst eliminieren</li>
+                <li>Bei Code-Fragen: Schritt für Schritt durchgehen</li>
+                <li>LEGB-Rule anwenden bei Scope-Fragen</li>
+            </ul>
+
+            <h3>Multiple Choice</h3>
+            <div class="warning-box">
+                <strong>⚠️ VORSICHT: Minuspunkte für falsche Antworten!</strong>
+                <ul>
+                    <li>Nur ankreuzen wenn sicher</li>
+                    <li>Besser eine richtige als zwei falsche</li>
+                    <li>Bei Unsicherheit: Nicht ankreuzen</li>
+                </ul>
+            </div>
+
+            <h3>Drag & Drop</h3>
+            <ul>
+                <li>Für Code-Completion</li>
+                <li>Logische Reihenfolge beachten</li>
+                <li>Syntax-Regeln befolgen</li>
+                <li>Einrückung (Indentation) beachten</li>
+            </ul>
+
+            <h3>Arrange</h3>
+            <ul>
+                <li>Oft für Ausführungsreihenfolge</li>
+                <li>Scope-Regeln beachten (LEGB-Rule)</li>
+                <li>Constructor wird vor anderen Methoden aufgerufen</li>
+                <li>Properties: Getter vor Setter bei Zugriff</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>⚠️ Häufige Prüfungsfallen</h2>
+            
+            <div class="warning-box">
+                <ol>
+                    <li><strong>Scope:</strong> Verwechslung von local/global variables</li>
+                    <li><strong>Mutable vs Immutable:</strong> Listen ändern sich, Tuples nicht</li>
+                    <li><strong>Return vs Print:</strong> Functions ohne return geben None zurück</li>
+                    <li><strong>Dictionary KeyError:</strong> <span class="inline-code">dict[key]</span> vs <span class="inline-code">dict.get(key)</span></li>
+                    <li><strong>List Methods:</strong> Welche ändern die Liste, welche geben neue zurück</li>
+                    <li><strong>Boolean Context:</strong> Leere containers sind falsy</li>
+                    <li><strong>String Slicing:</strong> End-Index ist exklusiv</li>
+                    <li><strong>Properties:</strong> Getter/Setter vs normale Attribute</li>
+                </ol>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, #74b9ff, #0984e3); color: white; border-radius: 10px;">
+            <h2 style="color: white; border: none; margin-bottom: 10px;">🎉 Viel Erfolg bei der Prüfung!</h2>
+            <p style="font-size: 1.1em; margin: 0;">Du hast alle wichtigen Konzepte gelernt. Vertraue auf dein Wissen! 🐍✨</p>
+        </div>
+    </div>
+</body>
+</html>
